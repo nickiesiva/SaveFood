@@ -24,6 +24,9 @@ end
 gem 'bootstrap-sass'
 gem 'bcrypt',   '3.1.7'
 gem 'hirb'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
