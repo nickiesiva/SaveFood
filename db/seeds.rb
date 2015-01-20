@@ -9,11 +9,12 @@
 User.create!(name: "Nicky Valentino",
              email: "nickiesiva@gmail.com",
              password: "qweasd",
-             password_confirmation: "qweasd")
+             password_confirmation: "qweasd",
+             admin: true)
 
 99.times do |n|
   name = Faker::Name.name
-  email = "user-#{n+1}@kiona.com"
+  email = "emailkuke#{n+1}@kiona.com"
   password = "qweasd"
   User.create!(name: name,
                email: email,
