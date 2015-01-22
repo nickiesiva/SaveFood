@@ -21,3 +21,16 @@ User.create!(name: "Nicky Valentino",
                password: password,
                password_confirmation: password)
 end
+
+users = User.first(7)
+users.each do |user|
+  50.times do |n|
+    title = Faker::Lorem.sentence
+    link = Faker::Internet.url
+    description = Faker::Lorem.paragraph(3)
+    user.postlinks.create!(
+      title: title,
+      link: link,
+      description: description)
+  end
+end

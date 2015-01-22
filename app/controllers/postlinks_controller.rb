@@ -1,0 +1,2 @@
+class PostlinksController < ApplicationController
+end

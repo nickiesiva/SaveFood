@@ -7,9 +7,29 @@
         <%= gravatar_for @user %>
         <%= @user.name %>
       </h1>
+      <%= link_to 'Edit', edit_user_path(@user) %> |
+      <%= link_to 'Back', users_path %>
     </section>
   </aside>
-</div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+
+  <div class="col-md-8">
+    <h3>Postlinks (<%= @user.postlinks.count %>)</h3> 
+    <ul class="postlinks">
+      <% @postlinks.each do |postlink| %>
+        <li>
+          <%= link_to gravatar_for(postlink.user, size: 50), postlink.user %>
+          <span class="user"><%= link_to postlink.user.name, postlink.user %></span><br>
+          <span class="content">
+            <strong><em><a href="<%= postlink.link %>"><%= postlink.title %></a></em></strong><br>
+            <%= postlink.description %>
+          </span>
+          <span class="timestamp">
+            Posted <%= time_ago_in_words(postlink.created_at) %> ago.
+          </span>
+        </li>
+      <% end %>
+    </ul>
+    <%= will_paginate @postlinks %>
+  </div>
+</div>
