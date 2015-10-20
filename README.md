@@ -1,2 +1,2 @@
-# SaveFood
-Simple Mini Blog, side project to learn basic Rails. You can save description of food, use for remember where we ate it.
+# Wretlinks
+Simple Mini Blog. You can save some links, maybe you need it in the future.
